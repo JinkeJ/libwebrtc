@@ -323,6 +323,7 @@ void RTCPeerConnectionImpl::OnIceCandidate(
 #if 0
     if (candidate->candidate().protocol() != "tcp")
         return;
+#endif
 
 
   // For loopback test. To save some connecting delay.
@@ -332,7 +333,6 @@ void RTCPeerConnectionImpl::OnIceCandidate(
     }
     return;
   }
-#endif
 
   std::string cand_sdp;
   if (observer_ && candidate->ToString(&cand_sdp)) {
